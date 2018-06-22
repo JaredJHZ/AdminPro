@@ -5,9 +5,20 @@ import {NopagefoundComponent} from './nopagefound/nopagefound.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
 
 @NgModule(
-      { 
-       declarations:[BreadcrumbsComponent,HeaderComponent,NopagefoundComponent,SidebarComponent],
-       exports:[BreadcrumbsComponent,HeaderComponent,NopagefoundComponent,SidebarComponent]
-
-}
+      {
+            declarations: [
+                NopagefoundComponent,
+                HeaderComponent,
+                SidebarComponent,
+                BreadcrumbsComponent,
+                NopagefoundComponent
+            ],
+            exports: [
+                NopagefoundComponent,
+                HeaderComponent,
+                SidebarComponent,
+                BreadcrumbsComponent,
+                NopagefoundComponent
+            ]
+        }
 )export class SharedModule{}
