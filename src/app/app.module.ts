@@ -9,6 +9,8 @@ import {PagesModule} from './pages/pages.module';
 //routes
 import { APP_ROUTES } from './app.routes';
 
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [

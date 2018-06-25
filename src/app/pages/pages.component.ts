@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterOutlet, ActivatedRoute } from '@angular/router';
+import { Url } from 'url';
 
 @Component({
   selector: 'app-pages',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
-  constructor() { }
+  title:string;
+
+  constructor() { 
+
+  }
 
   ngOnInit() {
   }

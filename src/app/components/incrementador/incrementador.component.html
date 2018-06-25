@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-body">
+      <h3>{{legend}}</h3>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="input-group">
+              <span class="inputo-group-btn">
+                <button 
+                (click)="changeValues(-5)"
+                class="btn btn-primary" type="button">
+                    <i class="mdi mdi-minus"></i>
+                </button>
+              </span>
+              <input
+              #txtValue
+              (ngModelChange)="onChange($event)"
+              min="1" max="100" style="text-align: center" type="number" class="form-control" placeholder="progreso" [(ngModel)]="percent" name="progress">
+              <span class="inputo-group-btn">
+                  <button
+                  (click)="changeValues(5)"
+                  class="btn btn-primary" type="button">
+                    <i class="mdi mdi-plus"></i>
+                  </button>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+  
+  
