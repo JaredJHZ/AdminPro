@@ -11,11 +11,12 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
 // charts
 import {ChartsModule} from 'ng2-charts';
 import { GraficoDonasComponent } from '../components/grafico-donas/grafico-donas.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 @NgModule(
       { 
-      declarations:[DashboardComponent,Graficas1Component,ProgressComponent,PagesComponent,IncrementadorComponent,GraficoDonasComponent],
+      declarations:[DashboardComponent,Graficas1Component,ProgressComponent,PagesComponent,IncrementadorComponent,GraficoDonasComponent, AccountSettingsComponent],
        exports:[DashboardComponent,Graficas1Component,ProgressComponent],
        imports:[SharedModule,PAGES_ROUTES,FormsModule, ChartsModule]
 
