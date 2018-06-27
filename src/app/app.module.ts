@@ -8,6 +8,9 @@ import {PagesModule} from './pages/pages.module';
 
 //routes
 import { APP_ROUTES } from './app.routes';
+import { SettingsService } from './services/settings.service';
+
+//services
 
 
 
@@ -19,7 +22,7 @@ import { APP_ROUTES } from './app.routes';
     PagesModule,
     APP_ROUTES
   ],
-  providers: [],
+  providers: [SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
