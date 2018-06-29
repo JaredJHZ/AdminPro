@@ -9,6 +9,8 @@ import {PagesModule} from './pages/pages.module';
 //routes
 import { APP_ROUTES } from './app.routes';
 import { SettingsService } from './services/settings.service';
+import { FormsModule } from '@angular/forms';
+
 
 //services
 
@@ -20,7 +22,8 @@ import { SettingsService } from './services/settings.service';
     BrowserModule,
     LoginModule,
     PagesModule,
-    APP_ROUTES
+    APP_ROUTES,
+    FormsModule
   ],
   providers: [SettingsService],
   bootstrap: [AppComponent]
