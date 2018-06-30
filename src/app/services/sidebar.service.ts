@@ -20,6 +20,10 @@ export class SidebarService {
         {
             title: 'Graphics',
             url: '/graficas1'
+        },
+        {
+          title: 'Observables',
+          url: '/observables'
         }
       ]
     }
