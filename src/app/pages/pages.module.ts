@@ -12,7 +12,9 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
 import {ChartsModule} from 'ng2-charts';
 import { GraficoDonasComponent } from '../components/grafico-donas/grafico-donas.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
-import { ObservablesComponent } from './observables/observables.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { CommonModule } from '@angular/common';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule(
@@ -23,9 +25,9 @@ import { ObservablesComponent } from './observables/observables.component';
       IncrementadorComponent,
       GraficoDonasComponent, 
       AccountSettingsComponent, 
-      ObservablesComponent],
+      PromesasComponent, RxjsComponent],
        exports: [DashboardComponent,Graficas1Component,ProgressComponent],
-       imports: [SharedModule,PAGES_ROUTES,FormsModule, ChartsModule]
+       imports: [SharedModule, PAGES_ROUTES, FormsModule, ChartsModule, CommonModule]
 
 }
 )export class PagesModule{}
