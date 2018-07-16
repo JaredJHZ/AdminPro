@@ -7,6 +7,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const PAGESRoutes:Routes = [
@@ -44,6 +45,11 @@ const PAGESRoutes:Routes = [
                         path: 'rxjs',
                         component: RxjsComponent,
                         data: {title: 'Rxjs'}
+                     },
+                     {
+                        path: 'perfil',
+                        component: ProfileComponent, 
+                        data : {title: 'Perfil de usuario'}
                      },
                      {
                         path: '',

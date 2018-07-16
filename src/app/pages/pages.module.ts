@@ -16,6 +16,10 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { CommonModule } from '@angular/common';
 import { RxjsComponent } from './rxjs/rxjs.component';
 
+// pipes
+
+import {PipesModule} from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule(
       {declarations: [DashboardComponent,
@@ -25,9 +29,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
       IncrementadorComponent,
       GraficoDonasComponent, 
       AccountSettingsComponent, 
-      PromesasComponent, RxjsComponent],
+      PromesasComponent, RxjsComponent, ProfileComponent],
        exports: [DashboardComponent,Graficas1Component,ProgressComponent],
-       imports: [SharedModule, PAGES_ROUTES, FormsModule, ChartsModule, CommonModule]
+       imports: [SharedModule, PAGES_ROUTES, FormsModule, ChartsModule, CommonModule, PipesModule]
 
 }
 )export class PagesModule{}
