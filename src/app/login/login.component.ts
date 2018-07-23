@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     gapi.load('auth2', () => {
       this.auth2 = gapi.auth2.init({
         client_id:'436512794014-hh9bhv78r2ji10l48a1pfm58f3pc7qv3.apps.googleusercontent.com',
-        cookiepolicy: 'single_host_origin'
+        cookiepolicy: 'single_host_origin',
         scope: 'email profile'
       });
       this.attachSignIn(document.getElementById('google'));
@@ -53,7 +53,6 @@ export class LoginComponent implements OnInit {
             window.location.href = '#/dashboard';
           }
         );
-      console.log(token);
     });
   }
 
@@ -61,7 +60,7 @@ export class LoginComponent implements OnInit {
    if (forma.invalid) {
      return;
    }
-   let usuario = new Usuario(null, forma.value.email, forma.value.password);
+   const usuario = new Usuario(null, forma.value.email, forma.value.password);
    this._usuarioService.login(usuario, forma.value.recuerdame)
     .subscribe(
       (resp) => {

@@ -20,6 +20,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 
 import {PipesModule} from '../pipes/pipes.module';
 import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 @NgModule(
       {declarations: [DashboardComponent,
@@ -29,7 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
       IncrementadorComponent,
       GraficoDonasComponent, 
       AccountSettingsComponent, 
-      PromesasComponent, RxjsComponent, ProfileComponent],
+      PromesasComponent, RxjsComponent, ProfileComponent, UsuariosComponent, ModalUploadComponent],
        exports: [DashboardComponent,Graficas1Component,ProgressComponent],
        imports: [SharedModule, PAGES_ROUTES, FormsModule, ChartsModule, CommonModule, PipesModule]
 

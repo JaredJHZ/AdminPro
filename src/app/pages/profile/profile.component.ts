@@ -47,7 +47,6 @@ export class ProfileComponent implements OnInit {
   }
 
   cambiarImagen() {
-    console.log(this.usuario);
     this.usuarioS.cambiarImagen(this.imagenSubir, this.usuario._id);
   }
 
