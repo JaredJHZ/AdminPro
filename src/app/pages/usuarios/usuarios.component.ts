@@ -79,13 +79,10 @@ export class UsuariosComponent implements OnInit {
     }).then( (borrar) => {
       if ( borrar) {
         this.usuarioS.borrarUsuario(usuario._id).subscribe(
-          (res) => {
-            this.cargarUsuarios();
+          res => this.cargarUsuarios()
           // tslint:disable-next-line:semicolon
-          }
-    }
     // tslint:disable-next-line:semicolon
-    )
+    ));
   }
 
   guardarUsuario(usuario: Usuario) {

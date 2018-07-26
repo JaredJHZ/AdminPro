@@ -1,0 +1,66 @@
+<div class="row animated fadeIn">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <input #input 
+        placeholder="Busqueda de medicos"
+        (keyup)="buscarMedico(input.value)"
+        class="form-control" type="text">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+      <div class="card">
+          <div class="card-body text-center">
+            <h3 class="card-title text-left">Agregar nuevo medico</h3>
+            <button
+            (click)="agregarMedico()"
+            class="btn btn-primary">Agregar</button>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="row animated fadeIn ">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Medicos registrados(<small>{{medicosT}}</small>)</h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nombre</th>
+              <th>Hospital</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let medico of medicos">
+              <td><img class="w50 img-circle" [src]="medico.img | imagen:'medico'" alt=""></td>
+              <td>{{medico.nombre}}</td>
+              <td>{{medico.hospital.nombre}}</td>
+              <td>
+                  <button 
+                  (click)="editarMedico(medico._id)"
+                  class="espacio btn btn-primary">  <i class="fa fa-edit"></i></button>
+                  <button
+                  (click)="borrar(medico._id)"
+                  class="espacio btn btn-danger"><i class="fa fa-trash-o"></i></button> 
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button (click)="aumentar(-5)" class="espacio btn btn-secondary">
+          Anterior
+        </button>
+        <button (click)="aumentar(5)" class="espacio btn btn-secondary">
+          Siguiente
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

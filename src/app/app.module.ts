@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {UsuarioService} from './services/usuario/usuario.service';
 import { SidebarService } from './services/sidebar.service';
 import { CommonModule } from '@angular/common';
+import { MedicoComponent } from './pages/medicos/medico.component';
+import { ImagenPipe } from './pipes/imagen.pipe';
 
 
 
@@ -21,7 +23,7 @@ import { CommonModule } from '@angular/common';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MedicoComponent],
   imports: [
     BrowserModule,
     LoginModule,

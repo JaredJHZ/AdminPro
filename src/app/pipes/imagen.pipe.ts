@@ -12,13 +12,13 @@ export class ImagenPipe implements PipeTransform {
     let url = urlService + '/img';
 
     if (img === undefined){
-     url += '/usuarios/xxxx';
+     url += '/' + tipo + '/xxxx';
     } else {
       if ( img.indexOf('https') >= 0 ) {
         return img;
       }
       if (!img) {
-         url += '/usuarios/xxxxx';
+         return url += `/${tipo}/xxxxx`;
       }
       switch ( tipo ) {
         case 'usuario':
