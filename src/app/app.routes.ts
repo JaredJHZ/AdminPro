@@ -6,6 +6,7 @@ import { Graficas1Component } from './pages/graficas1/graficas1.component';
 import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component';
 import { PagesComponent } from './pages/pages.component';
 import { RegisterComponent } from './login/register.component';
+import { LoginGuardGuard } from './services/guards/login-guard.guard';
 const APPROUTES:Routes = [
        {
               path:'login',
@@ -16,6 +17,12 @@ const APPROUTES:Routes = [
               path:'register',
               component:RegisterComponent,
               data: {title: 'register'}
+       },
+       {
+        path:'',
+        component: PagesComponent,
+        canActivate: [LoginGuardGuard],
+        loadChildren: './pages/pages.module#PagesModule'
        },
        {
               path:'**',

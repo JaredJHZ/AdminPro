@@ -23,7 +23,7 @@ export class MedicoService {
     const url =  `${urlService}/medico/${id}`;
     return this.http.get(url).pipe(
       map((resp: any) => resp.medico
-    );
+    ));
   }
 
   buscarMedico(palabra: string) {
@@ -58,7 +58,7 @@ export class MedicoService {
       let url = `${urlService}/medico/${medico._id}?token=${this.usuario.token}`;
       return this.http.put(url, medico).pipe(
         map (
-          resp => {
+          (resp: any) => {
             swal('Medico actualizado', medico.nombre, 'success');
             return resp.medicoActualizado;
           }

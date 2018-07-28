@@ -27,8 +27,8 @@ export class HospitalesService {
     return this.http.put(url, hospital)
       .pipe(
         map(
-          (resp) => {
-            swal('Hospital actualizado', 'Se actualizo el'+resp.hospitalActualizado.nombre,'success');
+          (resp: any) => {
+            swal('Hospital actualizado', 'Se actualizo el' + resp.hospitalActualizado.nombre,'success');
           }
         )
       );
@@ -39,7 +39,7 @@ export class HospitalesService {
     return this.http.get(url)
       .pipe(
         map(
-          (resp: any) {
+          (resp: any) => {
             return resp.resultado;
           }
         )
@@ -54,7 +54,7 @@ export class HospitalesService {
 
   obtenerHospital(id: string) {
     const url = `${urlService}/hospital/${id}`;
-    return this.http.get(url).pipe(map(resp => resp.hospital));
+    return this.http.get(url).pipe(map((resp: any) => resp.hospital));
   }
 
 }

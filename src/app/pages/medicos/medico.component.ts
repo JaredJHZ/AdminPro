@@ -30,8 +30,8 @@ export class MedicoComponent implements OnInit {
 
   ngOnInit() {
     this.hospitalesS.getHospitales(0).subscribe(
-      (hospitales) => {
-        this.hospitales = hospitales.hospitales;
+      (hospitales: any) => {
+        this.hospitales = hospitales.hospitales
       }
     );
     this.upload.notificacion.subscribe(
@@ -67,7 +67,7 @@ export class MedicoComponent implements OnInit {
     this.medicoS.cargarMedico( id )
           .subscribe( (medico: any) => {
             this.medico = medico;
-            this.hospital = this.medico.hospital;
+            this.hospital._id = this.medico.hospital;
           });
   }
 

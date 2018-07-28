@@ -15,6 +15,9 @@ import { SidebarService } from './services/sidebar.service';
 import { CommonModule } from '@angular/common';
 import { MedicoComponent } from './pages/medicos/medico.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { PagesComponent } from './pages/pages.component';
+import { SharedModule } from './shared/shared.module';
+import { PipesModule } from './pipes/pipes.module';
 
 
 
@@ -23,15 +26,16 @@ import { ImagenPipe } from './pipes/imagen.pipe';
 
 
 @NgModule({
-  declarations: [AppComponent, MedicoComponent],
+  declarations: [AppComponent, PagesComponent],
   imports: [
     BrowserModule,
     LoginModule,
-    PagesModule,
     APP_ROUTES,
     FormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    SharedModule,
+    PipesModule
   ],
   providers: [SettingsService, UsuarioService , SidebarService],
   bootstrap: [AppComponent]

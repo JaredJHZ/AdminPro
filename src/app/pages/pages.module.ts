@@ -21,21 +21,21 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import {PipesModule} from '../pipes/pipes.module';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { ImagenPipe } from '../pipes/imagen.pipe';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 @NgModule(
       {declarations: [DashboardComponent,
       Graficas1Component,
        ProgressComponent,
-      PagesComponent,
       IncrementadorComponent,
       GraficoDonasComponent,
-      AccountSettingsComponent
-      PromesasComponent, RxjsComponent, ProfileComponent, UsuariosComponent, ModalUploadComponent, HospitalesComponent, MedicosComponent, BusquedaComponent],
+      AccountSettingsComponent,
+      PromesasComponent, RxjsComponent, ProfileComponent, UsuariosComponent,
+       HospitalesComponent, MedicosComponent, BusquedaComponent, MedicoComponent],
        exports: [DashboardComponent,Graficas1Component,ProgressComponent, PipesModule],
        imports: [SharedModule, PAGES_ROUTES, FormsModule, ChartsModule, CommonModule, PipesModule]
 

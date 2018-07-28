@@ -29,9 +29,9 @@ export class IncrementadorComponent implements OnInit {
 
     //let barra:any = document.getElementsByName('progress')[0];
     this.txtValue.nativeElement.value= this.percent;
+  }
 
-
-  changeValues(value:number){
+changeValues(value:number){
 if((this.percent+value)>-1 && (this.percent + value) < 101){
       this.percent+=value;
       this.changeValue.emit(this.percent);

@@ -53,16 +53,13 @@ export class HospitalesComponent implements OnInit {
       icon: 'warning',
       buttons: true,
       dangerMode: true
-    }).then( (borrar) => {
-      if ( borrar) {
-        this.hospitalesS.borrarHospital(id).subscribe(
-          (resp) => {
-            this.cargarHospitales(this.desde);
-          }
-        );
-          // tslint:disable-next-line:semicolon
-    // tslint:disable-next-line:semicolon
-  });
+    }).then(
+      (borrar) => {
+        if (borrar) {
+          this.hospitalesS.borrarHospital(id).subscribe(() => this.cargarHospitales(this.desde));
+        }
+      }
+    );
 }
 
 actualizarHospital(hospital: Hospital) {

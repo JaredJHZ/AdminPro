@@ -5,9 +5,8 @@ import {urlService} from '../../config/config';
 import { Observable, Subscription} from 'rxjs'; import { map, retry, filter, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo.service';
-import { SidebarService } from '../sidebar.service';
 import { EventEmitter } from '@angular/core';
-import {} from ''
+import { ObserveOnOperator } from '../../../../node_modules/rxjs/internal/operators/observeOn';
 @Injectable()
 export class UsuarioService {
 
@@ -134,7 +133,7 @@ export class UsuarioService {
         const usuario: Usuario = resp.usuario;
         if(this.usuario._id === resp.usuario._id) {
           console.log(resp);
-          this.guardarStorage(usuario.id , this.token, usuario, resp.menu);
+          this.guardarStorage(usuario._id , this.token, usuario, resp.menu);
         }
         swal('Usuario actualizado', usuario.nombre, 'success');
         return true;
@@ -172,5 +171,25 @@ export class UsuarioService {
     );
   }
 
+  renuevaToken() {
+    let url = `${urlService}/login/renuevaToken?token=${this.token}`;
+    return this.http.get(url).pipe(
+      map(
+        (resp: any) => {
+          this.token = resp.token;
+          localStorage.setItem('token', this.token);
+          return true;
+        }
+      ),
+      catchError(
+        error => {
+          swal('No fue posible renovar token', 'loguese otra vez', 'warning');
+          this.limpiar();
+          this.router.navigate(['/login']);
+          return Observable.throw(error);
+        }
+      )
+    )
+  }
 
 }

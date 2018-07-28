@@ -1,4 +1,5 @@
 export class Usuario {
+  static _id: string;
     constructor(
        public nombre: string,
        public email: string,
@@ -6,6 +7,6 @@ export class Usuario {
        public img?: string,
        public role: string = 'USER_ROLE',
        public google?: boolean,
-       public id?: string,
+       public _id?: string,
     ) { }
 }

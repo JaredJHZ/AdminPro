@@ -66,23 +66,21 @@ export class UsuariosComponent implements OnInit {
 
   borrarUsuario(usuario: Usuario) {
     console.log(usuario);
-    if (this.usuarioS.usuario._id === Usuario._id) {
+    if (this.usuarioS.usuario._id === usuario._id) {
       return;
     }
 
     swal({
       title:'Estas seguro?',
-      text: 'Esta a punto de borrar a '+usuario.nombre,
+      text: 'Esta a punto de borrar a ' + usuario.nombre,
       icon: 'warning',
       buttons: true,
       dangerMode: true
     }).then( (borrar) => {
-      if ( borrar) {
-        this.usuarioS.borrarUsuario(usuario._id).subscribe(
-          res => this.cargarUsuarios()
-          // tslint:disable-next-line:semicolon
-    // tslint:disable-next-line:semicolon
-    ));
+      if ( borrar ) {
+        this.usuarioS.borrarUsuario(usuario._id).subscribe(() => this.cargarUsuarios());
+      }
+    });
   }
 
   guardarUsuario(usuario: Usuario) {
