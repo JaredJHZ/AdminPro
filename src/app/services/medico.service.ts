@@ -54,6 +54,7 @@ export class MedicoService {
       )
     );
     } else {
+      console.log(medico);
       let url = `${urlService}/medico/${medico._id}?token=${this.usuario.token}`;
       return this.http.put(url, medico).pipe(
         map (

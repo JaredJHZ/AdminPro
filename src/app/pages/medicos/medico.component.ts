@@ -45,6 +45,7 @@ export class MedicoComponent implements OnInit {
     if (f.invalid) {
       return;
     }
+    console.log(this.medico);
     this.medicoS.guardarMedico(this.medico).subscribe(
       (medico) => {
         this.medico._id = medico._id;
@@ -57,14 +58,16 @@ export class MedicoComponent implements OnInit {
     this.hospitalesS.obtenerHospital(id).subscribe(
       (hospital: Hospital) => {
         this.hospital = hospital;
+        this.medico.hospital = this.hospital._id;
       }
     )
   }
 
   cargarMedico( id: string ) {
     this.medicoS.cargarMedico( id )
-          .subscribe( medico => {
+          .subscribe( (medico: any) => {
             this.medico = medico;
+            this.hospital = this.medico.hospital;
           });
   }
 

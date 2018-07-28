@@ -9,15 +9,18 @@ import { RegisterComponent } from './login/register.component';
 const APPROUTES:Routes = [
        {
               path:'login',
-              component:LoginComponent
+              component:LoginComponent,
+              data : {title: 'login'}
        },
        {
               path:'register',
-              component:RegisterComponent
+              component:RegisterComponent,
+              data: {title: 'register'}
        },
        {
               path:'**',
-              component:NopagefoundComponent
+              component:NopagefoundComponent,
+              data : {title: 'No Page'}
        }
 
 ];

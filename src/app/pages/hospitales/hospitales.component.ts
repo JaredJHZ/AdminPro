@@ -21,6 +21,12 @@ export class HospitalesComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.modal.notificacion.subscribe(
+      (resp) => {
+        swal('Imagen subida', '','success');
+        this.cargarHospitales(this.desde);
+      }
+    )
   }
 
   cargarHospitales(desde: number) {

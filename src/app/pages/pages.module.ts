@@ -25,6 +25,7 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
 import { HospitalesComponent } from './hospitales/hospitales.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { ImagenPipe } from '../pipes/imagen.pipe';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 @NgModule(
       {declarations: [DashboardComponent,
@@ -34,7 +35,7 @@ import { ImagenPipe } from '../pipes/imagen.pipe';
       IncrementadorComponent,
       GraficoDonasComponent,
       AccountSettingsComponent
-      PromesasComponent, RxjsComponent, ProfileComponent, UsuariosComponent, ModalUploadComponent, HospitalesComponent, MedicosComponent],
+      PromesasComponent, RxjsComponent, ProfileComponent, UsuariosComponent, ModalUploadComponent, HospitalesComponent, MedicosComponent, BusquedaComponent],
        exports: [DashboardComponent,Graficas1Component,ProgressComponent, PipesModule],
        imports: [SharedModule, PAGES_ROUTES, FormsModule, ChartsModule, CommonModule, PipesModule]
 

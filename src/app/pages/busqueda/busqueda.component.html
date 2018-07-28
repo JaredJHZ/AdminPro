@@ -1,0 +1,116 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">Resultados de la busqueda {{termino}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+    
+  <div class="col-md-4">
+      <h1 class="text-center">Users</h1>
+      <div *ngIf="usuarios.length<=0" class="alert alert-danger text-center">
+          No hay registros!
+        </div>
+    <table *ngIf="usuarios.length>=1" class="table table-hover">
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios">
+            <td>
+              <img [src]="usuario.img | imagen" alt="" class="w50">
+            </td>
+            <td>{{usuario.nombre}}</td>
+            <td>
+              <button 
+              [routerLink]="['/usuarios']"
+              class="btn btn-primary espacio">
+                  <i class="fa fa-edit"></i> 
+              </button>
+              <button class="btn btn-danger espacio">
+                  <i class="fa fa-trash-o"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+
+
+<div class="col-md-4">
+    <h1 class="text-center">Hospitales</h1>
+    <div *ngIf="hospitales.length<=0" class="alert alert-danger text-center">
+        No hay registros!
+      </div>
+      <table *ngIf="hospitales.length>=1"  class="table table-hover">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let hospital of hospitales">
+              <td>
+                <img [src]="hospital.img | imagen:'hospital'" alt="" class="w50">
+              </td>
+              <td>{{hospital.nombre}}</td>
+              <td>
+                <button 
+                [routerLink]="['/hospitales']"
+                class="btn btn-primary espacio">
+                    <i class="fa fa-edit"></i> 
+                </button>
+                <button class="btn btn-danger espacio">
+                    <i class="fa fa-trash-o"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+</div>
+
+<div class="col-md-4">
+  <h1 class="text-center">Medicos</h1>
+  <div *ngIf="medicos.length<=0" class="alert alert-danger text-center">
+    No hay registros!
+  </div>
+      <table *ngIf="medicos.length>=1" class="table table-hover">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let medico of medicos">
+              <td>
+                <img [src]="medico.img | imagen:'medico'" alt="" class="w50">
+              </td>
+              <td>{{medico.nombre}}</td>
+              <td>
+                <button 
+                [routerLink]="['/medico',medico._id]"
+                class="btn btn-primary espacio">
+                    <i class="fa fa-edit"></i> 
+                </button>
+                <button class="btn btn-danger espacio">
+                    <i class="fa fa-trash-o"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+</div>
+
+</div>

@@ -56,6 +56,7 @@ export class MedicosComponent implements OnInit {
     if ((this.desde + desde >= this.medicosT)) {
       return;
     }
+    this.desde += desde;
     this.getMedicos(this.desde);
   }
 
